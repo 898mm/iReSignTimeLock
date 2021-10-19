@@ -926,6 +926,11 @@ static NSString *kiTunesMetadataFileName            = @"iTunesMetadata";
         for (int i = 0; i < ([destinationPathComponents count]-1); i++) {
             destinationPath = [destinationPath stringByAppendingPathComponent:[destinationPathComponents objectAtIndex:i]];
         }
+
+
+        NSString *filePath = [self.workingPath stringByAppendingPathComponent:@"entitlements.plist"];
+        [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
+        
         
         fileName = [sourcePath lastPathComponent];
         fileName = [fileName substringToIndex:([fileName length] - ([[sourcePath pathExtension] length] + 1))];
@@ -1457,7 +1462,6 @@ static NSString *kiTunesMetadataFileName            = @"iTunesMetadata";
     [alert setAlertStyle:style];
     [alert runModal];
 }
-
 
 
 @end
