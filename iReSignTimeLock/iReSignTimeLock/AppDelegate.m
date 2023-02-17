@@ -1448,11 +1448,6 @@ static NSString *kiTunesMetadataFileName            = @"iTunesMetadata";
 }
 
 
-
-#pragma mark - Alert Methods
-
-/* NSRunAlerts are being deprecated in 10.9 */
-
 // Show a critical alert
 - (void)showAlertOfKind:(NSAlertStyle)style WithTitle:(NSString *)title AndMessage:(NSString *)message {
     NSAlert *alert = [[NSAlert alloc] init];
