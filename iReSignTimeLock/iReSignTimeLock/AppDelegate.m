@@ -178,23 +178,17 @@ static NSString *kiTunesMetadataFileName            = @"iTunesMetadata";
 
 
 - (void)updateDateResult:(NSDatePicker *)datePicker{
-    // 拿到当前选择的日期
     NSDate *theDate = [datePicker dateValue];
-    NSLog(@"日期：%@",theDate);
     if (theDate) {
-        // 把选择的日期格式化成想要的形式
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        //        formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
         formatter.dateFormat = @"yyyy-MM-dd HH:mm";
         NSString *dateString = [formatter stringFromDate:theDate];
-        NSLog(@"日期：%@",dateString);
         timeLockField.stringValue = dateString;
     }
 }
 
 - (IBAction)resign:(id)sender {
     
-    //判断：时间锁
     if (timelockCheckbox.state == NSOnState) {
         if (timeLockField.stringValue.length == 0) {
             [self showAlertOfKind:NSCriticalAlertStyle WithTitle:@"error" AndMessage:@"Input a time lock"];
@@ -344,11 +338,9 @@ static NSString *kiTunesMetadataFileName            = @"iTunesMetadata";
             }
             
             
-            //获取APP信息
             [self doAppPlistInfo];
             
             
-            //判断：时间锁
             if (timelockCheckbox.state == NSOnState) {
                 [self doPlistCopy];
             }
