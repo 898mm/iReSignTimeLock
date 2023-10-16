@@ -171,7 +171,6 @@ static NSString *kiTunesMetadataFileName            = @"iTunesMetadata";
         exit(0);
     }
     
-
     [self getCerts];
     
 }
@@ -217,7 +216,6 @@ static NSString *kiTunesMetadataFileName            = @"iTunesMetadata";
     verificationResult = nil;
     
     sourcePath = [pathField stringValue];
-    //    workingPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"com.appulize.iresign"];
     
     if ([certComboBox objectValue]) {
         if (([[[sourcePath pathExtension] lowercaseString] isEqualToString:@"ipa"]) ||
